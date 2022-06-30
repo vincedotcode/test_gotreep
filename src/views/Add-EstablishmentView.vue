@@ -118,23 +118,27 @@ input:checked + .slider-2 {
     <section class="content-main d-flex justify-content-center">
       <div class="row m-0 d-flex justify-content-center px-5 pt-4">
         <div class="col-4">
-          <div class="card shadow-card d-flex justify-content-center border-0 p-3 card-mini" @click="getCategories('hotel')">
+          <div class="card shadow-card d-flex justify-content-center border-0 p-3 card-mini" @click="getCategories('hotel'); setSelectedOption('hotel');">
             <img src="../assets/images/add-est-icon/Hotel_guest room1_pink.png" alt="hotel" height="100%" width="100px">
           </div>
         </div>
         <div class="col-4">
-          <div class="card shadow-card d-flex justify-content-center border-0 p-3 card-mini" @click="getCategories('app')">
+          <div class="card shadow-card d-flex justify-content-center border-0 p-3 card-mini" @click="getCategories('app'); setSelectedOption('appartment');">
             <img src="../assets/images/add-est-icon/apartment_pink.png" alt="apartment" width="100%">
           </div>
         </div>
         <div class="col-4">
-          <div class="card shadow-card d-flex justify-content-center border-0 p-3 card-mini" @click="getCategories('atypical')">
+          <div class="card shadow-card d-flex justify-content-center border-0 p-3 card-mini" @click="getCategories('atypical'); setSelectedOption('atypical');">
             <img src="../assets/images/add-est-icon/Atypical_pink.png" alt="atypical" width="100%">
           </div>
         </div>
       </div>
     </section>
     <section class="information pt-5">
+      <HotelComponent v-if="selectedOption === 'hotel'" />
+      <AppartmentComponent v-if="selectedOption === 'appartment'" />
+      <AtypicalComponent v-if="selectedOption === 'atypical'" />
+
       <div class="header bg-pink" v-for= "header in generalHeader" :key="header.id">
         <h3 class="font-normal p-2 text-white">GENERAL INFORMATION {{header.title}}</h3>     
       </div>
@@ -256,10 +260,15 @@ import DetailedInformation from "../components/add_accomodation_components/hotel
 
       components: {
         DetailedInformation,
+        HotelComponent: () => import('./testComponents/hotel.component.vue'),
+        AppartmentComponent: () => import('./testComponents/appartment.component.vue'),
+        AtypicalComponent: () => import('./testComponents/atypical.component.vue'),
       },
         data() {
           
           return {
+            selectedOption: 'hotel',
+
             //HEADER TITLE CONTENT START
             counter1: 0,
             counter2: 0,
@@ -391,6 +400,10 @@ import DetailedInformation from "../components/add_accomodation_components/hotel
           }
         },
         methods: {
+          setSelectedOption: function (value) {
+            this.selectedOption = value;
+          },
+
           incrementValue1() {
             this.counter1++;
           },
