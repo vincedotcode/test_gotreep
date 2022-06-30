@@ -1,0 +1,58 @@
+/* Colors Variables */
+
+:root {
+    --pink: rgb(254,122,159);
+    --green: #28BA8C;
+    --gray: #70707D;
+    --white: #ffff;
+  }
+
+    /* Font Colors */
+    .text-pink{
+        color:#FE7A9F ;
+    }
+    .text-green{
+        color: #28BA8C;
+    }
+    .text-gray{
+        color: #70707D;
+    }
+    .text-white{
+        color: white;
+    }
+
+    /* Background Colors */
+    .bg-green{
+        background-color: #28BA8C;
+    }
+    .bg-gray{
+        background-color: #70707D;
+    }
+    .bg-pink{
+        background-color: #FE7A9F;
+    }
+
+ /* Font CSS */
+
+     /* Font Size */
+
+    .font-small{
+        font-size: 15px;
+    }
+
+    .font-normal{
+        font-size: 22px;
+    }
+    
+    .font-huge{
+        font-size: 30px;
+    }
+    
+
+
+/* Box Shadow */
+
+.shadow-card{
+    box-shadow: 0 2px 6px #85868a !important;
+}
+    
