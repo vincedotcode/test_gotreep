@@ -128,7 +128,7 @@
               <p>Pictures of establishment</p>
               <div>
                 <img
-                  src="../assets/picture_card.png"
+                  src="../../../assets/picture_card.png"
                   alt=""
                   style="box-shadow: 0 2px 6px #85868a !important"
                 />
@@ -153,21 +153,21 @@
                   <div class="carousel-item active">
                     <img
                       class="d-block w-100"
-                      src="../assets/backgrounds/background-main.png"
+                      src="../../../assets/backgrounds/background-main.png"
                       alt="First slide"
                     />
                   </div>
                   <div class="carousel-item">
                     <img
                       class="d-block w-100"
-                      src="../assets/backgrounds/background-main.png"
+                      src="../../../assets/backgrounds/background-main.png"
                       alt="Second slide"
                     />
                   </div>
                   <div class="carousel-item">
                     <img
                       class="d-block w-100"
-                      src="../assets/backgrounds/background-main.png"
+                      src="../../../assets/backgrounds/background-main.png"
                       alt="Third slide"
                     />
                   </div>
@@ -207,6 +207,6 @@
 
 <script>
 export default {
-  name: "DetailedInformation",
+  name: 'DetailedInformation',
 };
 </script>
